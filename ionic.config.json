@@ -1,0 +1,7 @@
+{
+  "name": "Rz Automoviles",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
