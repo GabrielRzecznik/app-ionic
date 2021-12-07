@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-avatar slot="start">
+      <img src="https://avatars.githubusercontent.com/u/82976982?v=4">
+    </ion-avatar>
+    <ion-card-title>{{usuario.nombre}} {{usuario.apellido}}</ion-card-title>
+  </ion-item>
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#333333" fill-opacity="1" d="M0,128L60,117.3C120,107,240,85,360,112C480,139,600,213,720,234.7C840,256,960,224,1080,202.7C1200,181,1320,171,1380,165.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+  </svg>
+  
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let automovil of automovilesPublicados">
+  
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{automovil.marca}} {{automovil.modelo}}</ion-card-title>
+          <ion-card-subtitle>{{automovil.propietario}}</ion-card-subtitle>
+        </ion-card-header>
+          <img src="https://media.gq.com.mx/photos/604458fef0cc2a1d8969755c/master/pass/10%20autos%20que%20quieren%20ser%20el%20mejor%20de%202021%20-%20BMW%204-Series%202021%20(1).jpg" alt="">
+        <ion-card-content>
+          <ion-chip>
+            <ion-label>{{automovil.patente}}</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label>Versión | {{automovil.version}}</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label>Color | {{automovil.color}}</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label>Estado | {{automovil.estado}}</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label>Caja | {{automovil.cambio}}</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label>{{automovil.combustible}}</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label>${{automovil.valor}}</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label>{{automovil.kilometraje}} Km</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-label>{{automovil.anio}}</ion-label>
+          </ion-chip>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  
+</ion-content>

@@ -18,6 +18,22 @@ const routes: Routes = [
   {
     path: 'registro',
     loadChildren: () => import('./paginas/registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./paginas/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'publicaciones',
+    loadChildren: () => import('./paginas/publicaciones/publicaciones.module').then( m => m.PublicacionesPageModule)
+  },
+  {
+    path: 'getout',
+    loadChildren: () => import('./paginas/getout/getout.module').then( m => m.GetoutPageModule)
+  },
+  {
+    path: 'subir',
+    loadChildren: () => import('./paginas/subir/subir.module').then( m => m.SubirPageModule)
   }
 ];
 

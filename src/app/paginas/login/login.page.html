@@ -1,66 +1,61 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Inicio de Sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path fill="#0099ff" fill-opacity="1" d="M0,128L60,117.3C120,107,240,85,360,112C480,139,600,213,720,234.7C840,256,960,224,1080,202.7C1200,181,1320,171,1380,165.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#444444" fill-opacity="1" d="M0,128L60,117.3C120,107,240,85,360,112C480,139,600,213,720,234.7C840,256,960,224,1080,202.7C1200,181,1320,171,1380,165.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+  </svg>
 
     <form [formGroup]="formularioLogin" (ngSubmit)="Loguear()">
-      <div class="delante">
+      <div class="login-center">
         <ion-card class="example-card">
-          <ion-card-subtitle class="colorPrimary">Rz Automoviles</ion-card-subtitle>
-          <ion-card-title>Inicio de Sesión</ion-card-title>
+          <ion-card-title class="titulo">Inicio de Sesión</ion-card-title>
+          <ion-card-subtitle class="subtitulo">Rz Automoviles</ion-card-subtitle>
           
-          <br>
           <ion-card-content class="full-width-input" appearance="outline">
-        
-          
+            
+            <!--Correo-->
             <ion-card-content class="full-width-input" appearance="outline">
               <ion-item>
                 <ion-label position="floating">Correo</ion-label>
                 <ion-input clearInput formControlName="correo" name="correo" id="correo" required></ion-input>
               </ion-item>
-              <span class="error" *ngIf="correo.invalid">{{getErrorMessageCorreo()}}></span>
-              <ion-icon name="mail-outline"></ion-icon>
+              <span class="error" *ngIf="correo.invalid">{{getErrorMessageCorreo()}}</span>
             </ion-card-content>
       
-              <ion-card-content class="full-width-input" appearance="outline">
-                <ion-item>
-                  <ion-label position="floating">Contraseña</ion-label>
-                  <ion-input [type]="hide ? 'password' : 'text'" formControlName="password" name="password" id="password" required></ion-input>
-                </ion-item>
-                <span class="error" *ngIf="password.invalid">{{getErrorMessagePassword()}}></span>
-                <ion-button (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                  <ion-icon name="eye-outline"></ion-icon>
-                  <ion-icon name="eye-off-outline"></ion-icon>
-                </ion-button>
-              </ion-card-content>
+            <!--Contraseña-->
+            <ion-card-content class="full-width-input" appearance="outline">
+              <ion-item>
+                <ion-label position="floating">Contraseña</ion-label>
+                <ion-input class="detras" [type]="hide ? 'password' : 'text'" formControlName="password" name="password" id="password" required></ion-input>
+                <!--Mostrar contraseña-->
+              </ion-item>
+              <ion-button color="light" item-end class="btn-eye-icon" (click)="hide = !hide" (click)="mostrarC()">
+                <ion-icon *ngIf="!mostrar" name="eye-outline"></ion-icon>
+                <ion-icon *ngIf="mostrar" name="eye-off-outline"></ion-icon>
+              </ion-button>
+              <span class="error" *ngIf="password.invalid">{{getErrorMessagePassword()}}</span>
+            </ion-card-content>
+          
           </ion-card-content> 
-
-            <ion-card-content>
+          <br>
+          <ion-card-content class="centrar">
               
-              <ion-button color="primary" type="submit" class="btn btn-warning" name="botonLogin" id="botonLogin" (click)="enviar()" [disabled]="formularioLogin.invalid">Iniciar Sesión</ion-button>
+              <ion-button class="separar" color="light" type="submit" name="botonLogin" id="botonLogin" (click)="enviar()" [disabled]="formularioLogin.invalid">Iniciar Sesión</ion-button>
              
-              <ion-button class="btn btn-secondary" type="button" (click)=registro()>Registrarse</ion-button>
+              <ion-button class="separar" color="light" type="button" (click)=registro()>Registrarse</ion-button>
             
-              </ion-card-content>
-
+          </ion-card-content>
+  
             <ion-footer>
               <ion-progress-bar *ngIf="visible as value" mode="indeterminate"></ion-progress-bar>
             </ion-footer>
           </ion-card> 
       </div>
     </form>
- 
-
-
-
-
-
 
 
 </ion-content>

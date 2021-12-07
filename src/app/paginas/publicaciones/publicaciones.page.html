@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Publicaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<div class="row">
+  <div class="col-lg-4" *ngFor="let automovil of automovilesPublicados">
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{automovil.marca}} {{automovil.modelo}}</ion-card-title>
+        <ion-card-subtitle>{{automovil.propietario}}</ion-card-subtitle>
+      </ion-card-header>
+        <img src="https://media.gq.com.mx/photos/604458fef0cc2a1d8969755c/master/pass/10%20autos%20que%20quieren%20ser%20el%20mejor%20de%202021%20-%20BMW%204-Series%202021%20(1).jpg" alt="">
+      <ion-card-content>
+        <ion-chip>
+          <ion-label>{{automovil.patente}}</ion-label>
+        </ion-chip>
+        <ion-chip>
+          <ion-label>Versión | {{automovil.version}}</ion-label>
+        </ion-chip>
+        <ion-chip>
+          <ion-label>Color | {{automovil.color}}</ion-label>
+        </ion-chip>
+        <ion-chip>
+          <ion-label>Estado | {{automovil.estado}}</ion-label>
+        </ion-chip>
+        <ion-chip>
+          <ion-label>Caja | {{automovil.cambio}}</ion-label>
+        </ion-chip>
+        <ion-chip>
+          <ion-label>{{automovil.combustible}}</ion-label>
+        </ion-chip>
+        <ion-chip>
+          <ion-label>${{automovil.valor}}</ion-label>
+        </ion-chip>
+        <ion-chip>
+          <ion-label>{{automovil.kilometraje}} Km</ion-label>
+        </ion-chip>
+        <ion-chip>
+          <ion-label>{{automovil.anio}}</ion-label>
+        </ion-chip>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</div>
+
+
+</ion-content>

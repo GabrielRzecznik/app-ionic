@@ -18,6 +18,7 @@ export class LoginPage implements OnInit {
   myControl = new FormControl();
   hide = true;
   visible = false;
+  mostrar = true;
 
   constructor(private api:ApiService, private router: Router, private fb:FormBuilder) {
     if (sessionStorage.getItem('token')==='válido') {
@@ -57,6 +58,14 @@ export class LoginPage implements OnInit {
     return this.password.hasError('password') ? 'La contraseña ingresado no es valido' : '';
   }
 
+  mostrarC(){
+    if (this.hide) {
+      this.mostrar = true;
+    }else{
+      this.mostrar = false;
+    }
+  }
+
   enviar(){
     this.visible = true;
   }
@@ -69,10 +78,6 @@ export class LoginPage implements OnInit {
     //localStorage.setItem('token', 'válido');
     sessionStorage.setItem('token', 'válido');
     this.router.navigate(['/publicaciones']);
-  }
-
-  salir(){
-    sessionStorage.removeItem('token');
   }
 
   registro(){
