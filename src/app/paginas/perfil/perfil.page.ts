@@ -30,5 +30,14 @@ export class PerfilPage implements OnInit {
     });
   }
 
+  EliminarAutomovil(patente:string){
+    //Selecciona el campo para eliminar
+    //console.log(patente);
+    this.api.EliminarAutomovil(patente).subscribe(resp => {
+      console.log(resp);
+    this.CargarPublicaciones();
+    });
+  }
+
 
 }
