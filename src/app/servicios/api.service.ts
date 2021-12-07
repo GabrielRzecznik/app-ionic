@@ -23,18 +23,15 @@ export class ApiService {
     return this.http.get('https://parcial-edi-backend.herokuapp.com/Automoviles/listaAutomovil');
   }
 
-  //Solucionar mañana
   MisPublicacionesAutomovil(){
-    const body = JSON.parse(localStorage.getItem('usuario')!).correo;
-    console.log(body)
-    return this.http.get('https://parcial-edi-backend.herokuapp.com/Automoviles/buscarMiListaAutomovil/', body );
+    const usuario = [ JSON.parse(localStorage.getItem('usuario')!).correo ];
+    return this.http.get('https://parcial-edi-backend.herokuapp.com/Automoviles/buscarMiListaAutomovil/' +usuario);
   }
 
   PublicarAutomovil(patente: string, marca: string, modelo: string, version: string, color: string, estado: string, cambio: string, combustible: string, valor: number, kilometraje: number, anio: number) {
     const body = { patente, marca, modelo, version, color, estado, cambio, combustible, valor, kilometraje, anio, propietario:JSON.parse(localStorage.getItem('usuario')!).correo};
     return this.http.post('https://parcial-edi-backend.herokuapp.com/Automoviles/publicarAutomovil', body);
   }
-
 
   EliminarAutomovil(patente: string) {
     const body = { patente };
