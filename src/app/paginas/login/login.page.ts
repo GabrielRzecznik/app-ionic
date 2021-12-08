@@ -27,35 +27,13 @@ export class LoginPage implements OnInit {
     
     this.formularioLogin = this.fb.group({
       correo: ["",[Validators.required, Validators.email]],
-      password: ["",[Validators.required, Validators.minLength(4), Validators.maxLength(24)]]
+      password: ["",[Validators.required, Validators.minLength(8), Validators.maxLength(24)]]
     });
     
   } 
 
   ngOnInit() {
-    this.api.recargarPagina.emit(true);
-  }
 
-  //Validaciónes
-  correo = new FormControl('', [Validators.required, Validators.email]);
-  password = new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(24)]);
-
-  //Mensaje error Correo
-  getErrorMessageCorreo() {
-    if (this.correo.hasError('required')) {
-      return 'Ingrese un correo valido';
-    }
-
-    return this.correo.hasError('correo') ? 'El correo ingresado no es valido' : '';
-  }
-
-  //Mensaje error Contraseña
-  getErrorMessagePassword() {
-    if (this.password.hasError('required')) {
-      return 'Ingrese su contraseña';
-    }
-
-    return this.password.hasError('password') ? 'La contraseña ingresado no es valido' : '';
   }
 
   mostrarC(){
@@ -95,7 +73,10 @@ export class LoginPage implements OnInit {
         console.log(resp);
         this.entrar();
         this.load(resp);
-      });
+        this.api.recargarPagina.emit(true);
+      },
+        (error)=>{alert("Usuario y Contraseña invalidos")}
+      );
   }
 
   load(usu:any){

@@ -18,7 +18,6 @@ export class PerfilPage implements OnInit {
 
    this.CargarPublicaciones();
     this.api.recargarPagina.subscribe(resp => {
-      console.log(resp);
       this.CargarPublicaciones();
     })
   }
@@ -34,7 +33,6 @@ export class PerfilPage implements OnInit {
     //Selecciona el campo para eliminar
     //console.log(patente);
     this.api.EliminarAutomovil(patente).subscribe(resp => {
-      console.log(resp);
     this.CargarPublicaciones();
     });
   }

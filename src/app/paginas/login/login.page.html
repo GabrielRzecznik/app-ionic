@@ -23,9 +23,14 @@
                 <ion-label position="floating">Correo</ion-label>
                 <ion-input clearInput formControlName="correo" name="correo" id="correo" required></ion-input>
               </ion-item>
-              <span class="error" *ngIf="correo.invalid">{{getErrorMessageCorreo()}}</span>
+              <!-- <span class="error" *ngIf="correo.invalid">{{getErrorMessageCorreo()}}</span> -->
+              <span class="text-danger ms-2" *ngIf="formularioLogin.get('correo')?.hasError('email')">
+                El correo ingresado <strong>no es valido</strong>!
+              </span>
+              <span class="text-danger ms-2" *ngIf="formularioLogin.get('correo')?.hasError('required') && formularioLogin.get('correo')?.touched">
+                El campo correo <strong>es obligatorio</strong>!
+              </span>
             </ion-card-content>
-      
             <!--Contraseña-->
             <ion-card-content class="full-width-input" appearance="outline">
               <ion-item>
@@ -37,7 +42,12 @@
                 <ion-icon *ngIf="!mostrar" name="eye-outline"></ion-icon>
                 <ion-icon *ngIf="mostrar" name="eye-off-outline"></ion-icon>
               </ion-button>
-              <span class="error" *ngIf="password.invalid">{{getErrorMessagePassword()}}</span>
+              <span class="text-danger ms-2" *ngIf="formularioLogin.get('password')?.hasError('required') && formularioLogin.get('password')?.touched">
+                El campo contraseña <strong>es obligatorio</strong>!
+              </span>
+              <span class="text-danger ms-2" *ngIf="formularioLogin.get('password')?.hasError('minlength')">
+                La contraseña debe tener como minimo 8 caracteres
+              </span>
             </ion-card-content>
           
           </ion-card-content> 

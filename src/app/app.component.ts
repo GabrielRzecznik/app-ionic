@@ -10,11 +10,12 @@ import { ApiService } from './servicios/api.service';
 export class AppComponent {
   usuario!:any;
   interructor!:boolean;
-  
+  //appPages!:Array<any>;
+
   public appPages = [
     { title: 'Publicaciones', url: '/publicaciones', icon: 'paper-plane' },
-    { title: 'Publicar', url: '/subir', icon: 'add' },
-    { title: 'Perfil', url: '/perfil', icon: 'person' },
+    //{ title: 'Publicar', url: '/subir', icon: 'add' },//
+    //{ title: 'Perfil', url: '/perfil', icon: 'person' },//
     { title: 'Registrarse', url: '/registro', icon: 'at' },
     { title: 'Iniciar Sesión', url: '/login', icon: 'log-in' }
   ];
@@ -24,13 +25,31 @@ export class AppComponent {
   ngOnInit() {
     this.api.recargarPagina.subscribe(resp => {
       console.log(resp);
+      if (JSON.parse(localStorage.getItem('usuario')!)) {
+        this.appPages = [
+          { title: 'Publicaciones', url: '/publicaciones', icon: 'paper-plane' },
+          { title: 'Publicar', url: '/subir', icon: 'add' },//
+          { title: 'Perfil', url: '/perfil', icon: 'person' },//
+          //{ title: 'Registrarse', url: '/registro', icon: 'at' },
+          //{ title: 'Iniciar Sesión', url: '/login', icon: 'log-in' }
+        ]
+      }else{
+        this.appPages = [
+          { title: 'Publicaciones', url: '/publicaciones', icon: 'paper-plane' },
+          { title: 'Registrarse', url: '/registro', icon: 'at' },
+          { title: 'Iniciar Sesión', url: '/login', icon: 'log-in' }
+        ]
+      }
+      this.usuario = JSON.parse(localStorage.getItem('usuario')!);
     })
-    this.usuario = JSON.parse(localStorage.getItem('usuario')!);
+
+    
   }
   
   salir(){
     localStorage.clear();
     sessionStorage.clear();
     this.router.navigate(['/login']);
+    this.api.recargarPagina.emit(true);
   }
 }

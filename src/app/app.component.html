@@ -4,8 +4,9 @@
       <ion-content>
         <ion-list id="inbox-list">
           <ion-list-header>Rz Automoviles</ion-list-header>
-          <ion-note *ngIf="usuario">{{usuario.correo}}</ion-note>
-          <ion-note *ngIf="!usuario">Inicie Sesión</ion-note>
+          <!-- <ion-note *ngIf="usuario">{{usuario.correo}}</ion-note> -->
+          <!-- <ion-note *ngIf="!usuario">Inicie Sesión</ion-note> -->
+          <ion-note>{{usuario?.correo ? usuario?.correo : 'Inicie Sesión'}}</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
@@ -15,7 +16,7 @@
           </ion-menu-toggle>
         </ion-list>
 
-        <ion-list>
+        <ion-list *ngIf="usuario">
             <ion-button color="danger" (click)="salir()">Cerrar Sesión</ion-button>
         </ion-list>
 
