@@ -11,6 +11,7 @@ export class AppComponent {
   usuario!:any;
   interructor!:boolean;
   //appPages!:Array<any>;
+  modo = "Modo oscuro";
 
   public appPages = [
     { title: 'Publicaciones', url: '/publicaciones', icon: 'paper-plane' },
@@ -54,8 +55,12 @@ export class AppComponent {
   toggleTheme(event){
     if(event.detail.checked){
       document.body.setAttribute('color-theme','dark');
+      this.modo = "Modo claro";
+      this.api.recargarPagina.emit(true);
     }else{
       document.body.setAttribute('color-theme','light');
+      this.modo = "Modo oscuro"
+      this.api.recargarPagina.emit(true);
     }
   }
 }

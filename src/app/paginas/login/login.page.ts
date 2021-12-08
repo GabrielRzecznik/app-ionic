@@ -75,7 +75,8 @@ export class LoginPage implements OnInit {
         this.load(resp);
         this.api.recargarPagina.emit(true);
       },
-        (error)=>{alert("Usuario y Contraseña invalidos")}
+        (error)=>{alert("Usuario y Contraseña invalidos");
+        this.visible = false;}
       );
   }
 
