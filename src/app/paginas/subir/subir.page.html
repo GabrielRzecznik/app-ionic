@@ -1,9 +1,128 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Publicar</ion-title>
+    <ion-title>Crear Publicar</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#444444" fill-opacity="1" d="M0,128L60,117.3C120,107,240,85,360,112C480,139,600,213,720,234.7C840,256,960,224,1080,202.7C1200,181,1320,171,1380,165.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+  </svg>
+
+  <form [formGroup]="formularioAutomovil" (ngSubmit)="CrearAutomovil()">
+    <div class="login-center">
+      <ion-card class="example-card">
+        <ion-card-title class="titulo">Rz Automoviles</ion-card-title>
+      
+        <!--Patente-->
+        <ion-card-content class="full-width-input" appearance="outline">
+          <ion-item>
+            <ion-label position="floating">Patente</ion-label>
+            <ion-input clearInput formControlName="patente" name="patente" id="patente" required></ion-input>
+          </ion-item>
+        </ion-card-content>
+        
+        <!--Marca-->
+        <ion-card-content class="full-width-input" appearance="outline">
+          <ion-item>
+            <ion-label position="floating">Marca</ion-label>
+            <ion-input clearInput formControlName="marca" name="marca" id="marca" required></ion-input>
+          </ion-item>
+        </ion-card-content>  
+        
+        <!--Modelo-->
+        <ion-card-content class="full-width-input" appearance="outline">
+          <ion-item>
+            <ion-label position="floating">Modelo</ion-label>
+            <ion-input clearInput formControlName="modelo" name="modelo" id="modelo" required></ion-input>
+          </ion-item>
+        </ion-card-content>  
+
+        <!--Version-->
+        <ion-card-content class="full-width-input" appearance="outline">
+          <ion-item>
+            <ion-label position="floating">Versión</ion-label>
+            <ion-input clearInput formControlName="version" name="version" id="version" required></ion-input>
+          </ion-item>
+        </ion-card-content>
+
+        <!--Color-->
+        <ion-card-content class="full-width-input" appearance="outline">
+          <ion-item>
+            <ion-label position="floating">Color</ion-label>
+            <ion-input clearInput formControlName="color" name="color" id="color" required></ion-input>
+          </ion-item>
+        </ion-card-content>  
+
+        <!--Estado-->
+        <ion-card-content class="full-width-input" appearance="outline">
+          <ion-item>
+            <ion-label position="floating">Estado</ion-label>
+            <ion-input clearInput formControlName="estado" name="estado" id="estado" required></ion-input>
+          </ion-item>
+        </ion-card-content>
+
+        <!--Cambio-->
+        <ion-card-content class="full-width-input" appearance="outline">
+          <ion-item>
+            <ion-label>Cambio</ion-label>
+            <ion-select formControlName="cambio" placeholder="Seleccione el tipo cambio">
+              <ion-select-option value="Manual">Manual</ion-select-option>
+              <ion-select-option value="Automatica">Automatica</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card-content>
+        
+        <!--Combustible-->
+        <ion-card-content class="full-width-input" appearance="outline">
+          <ion-item>
+            <ion-label>Combustible</ion-label>
+            <ion-select formControlName="combustible" placeholder="Seleccione el combustible">
+              <ion-select-option value="Gas">Gas</ion-select-option>
+              <ion-select-option value="Disel">Disel</ion-select-option>
+              <ion-select-option value="Nafta">Nafta</ion-select-option>
+              <ion-select-option value="Hibrido">Hibrido</ion-select-option>
+              <ion-select-option value="Electrico">Electrico</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card-content>
+        
+        <!--Valor-->
+        <ion-card-content class="full-width-input" appearance="outline">
+          <ion-item>
+            <ion-label position="floating">Valor</ion-label>
+            <ion-input clearInput formControlName="valor" name="valor" id="valor" required></ion-input>
+          </ion-item>
+        </ion-card-content>
+
+         <!--Kilometraje-->
+         <ion-card-content class="full-width-input" appearance="outline">
+          <ion-item>
+            <ion-label position="floating">Kilometraje</ion-label>
+            <ion-input clearInput formControlName="kilometraje" name="kilometraje" id="kilometraje" required></ion-input>
+          </ion-item>
+        </ion-card-content>
+
+        <!--Año-->
+        <ion-card-content class="full-width-input" appearance="outline">
+          <ion-item>
+            <ion-label position="floating">Año</ion-label>
+            <ion-input clearInput formControlName="anio" name="anio" id="anio" required></ion-input>
+          </ion-item>
+        </ion-card-content>  
+
+        <ion-card-content class="centrar">
+              
+          <ion-button color="light" type="submit" name="botonRegistro" id="botonRegistro" [disabled]="formularioAutomovil.invalid">Publicar</ion-button>
+         
+          <!--<ion-button class="separar" color="light" type="button" (click)=volver()>Login</ion-button>-->
+        
+        </ion-card-content>
+        
+      
+      </ion-card>
+    </div>
+  </form>
 
 </ion-content>

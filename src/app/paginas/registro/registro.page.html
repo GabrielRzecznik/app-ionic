@@ -10,7 +10,7 @@
     <path fill="#444444" fill-opacity="1" d="M0,128L60,117.3C120,107,240,85,360,112C480,139,600,213,720,234.7C840,256,960,224,1080,202.7C1200,181,1320,171,1380,165.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
   </svg>
 
-  <form [formGroup]="formularioRegistro" (ngSubmit)="registrar()">
+  <form [formGroup]="formularioRegistro" (ngSubmit)="CrearUsuario()">
     <div class="login-center">
       <ion-card class="example-card">
         <ion-card-title class="titulo">Registrate!!</ion-card-title>
@@ -186,7 +186,7 @@
 
         <ion-card-content class="centrar">
               
-          <ion-button color="light" type="submit" name="botonRegistro" id="botonRegistro" (click)="CrearUsuario()" [disabled]="formularioRegistro.invalid">Registrar</ion-button>
+          <ion-button color="light" type="submit" name="botonRegistro" id="botonRegistro" [disabled]="formularioRegistro.invalid">Registrar</ion-button>
          
           <!--<ion-button class="separar" color="light" type="button" (click)=volver()>Login</ion-button>-->
         

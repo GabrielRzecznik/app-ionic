@@ -117,3 +117,10 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+.centrado{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}

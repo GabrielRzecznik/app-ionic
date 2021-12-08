@@ -41,9 +41,7 @@ export class AppComponent {
         ]
       }
       this.usuario = JSON.parse(localStorage.getItem('usuario')!);
-    })
-
-    
+    }) 
   }
   
   salir(){
@@ -51,5 +49,13 @@ export class AppComponent {
     sessionStorage.clear();
     this.router.navigate(['/login']);
     this.api.recargarPagina.emit(true);
+  }
+
+  toggleTheme(event){
+    if(event.detail.checkd){
+      document.body.setAttribute('color-theme','dark');
+    }else{
+      document.body.setAttribute('color-theme','light');
+    }
   }
 }
