@@ -14,7 +14,7 @@
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
-        </ion-list>
+        </ion-list> 
 
         <ion-item>
           <ion-label>Modo oscuro</ion-label>
@@ -22,7 +22,7 @@
         </ion-item>
 
         <ion-item *ngIf="usuario" >
-            <ion-button class="centrado" color="danger" (click)="salir()">Cerrar Sesión</ion-button>
+            <ion-button slot="end" class="centrado" color="danger" (click)="salir()">Cerrar Sesión</ion-button>
         </ion-item>
 
       </ion-content>
