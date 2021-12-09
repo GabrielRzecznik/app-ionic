@@ -8,7 +8,7 @@ describe('new App', () => {
   });
   describe('default screen', () => {
     beforeEach(() => {
-      page.navigateTo('/Inbox');
+      page.navigateTo('/publicaciones');
     });
     it('should say Inbox', () => {
       expect(page.getParagraphText()).toContain('Inbox');

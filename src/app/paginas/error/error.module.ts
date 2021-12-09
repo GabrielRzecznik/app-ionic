@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { GetoutPageRoutingModule } from './getout-routing.module';
+import { ErrorPageRoutingModule } from './error-routing.module';
 
-import { GetoutPage } from './getout.page';
+import { ErrorPage } from './error.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GetoutPageRoutingModule
+    ErrorPageRoutingModule
   ],
-  declarations: [GetoutPage]
+  declarations: [ErrorPage]
 })
-export class GetoutPageModule {}
+export class ErrorPageModule {}

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { GetoutPage } from './getout.page';
+import { ErrorPage } from './error.page';
 
-describe('GetoutPage', () => {
-  let component: GetoutPage;
-  let fixture: ComponentFixture<GetoutPage>;
+describe('ErrorPage', () => {
+  let component: ErrorPage;
+  let fixture: ComponentFixture<ErrorPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ GetoutPage ],
+      declarations: [ ErrorPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(GetoutPage);
+    fixture = TestBed.createComponent(ErrorPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

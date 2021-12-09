@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
@@ -28,12 +28,12 @@ const routes: Routes = [
     loadChildren: () => import('./paginas/publicaciones/publicaciones.module').then( m => m.PublicacionesPageModule)
   },
   {
-    path: 'getout',
-    loadChildren: () => import('./paginas/getout/getout.module').then( m => m.GetoutPageModule)
-  },
-  {
     path: 'subir',
     loadChildren: () => import('./paginas/subir/subir.module').then( m => m.SubirPageModule)
+  },
+  {
+    path: '*',
+    loadChildren: () => import('./paginas/error/error.module').then( m => m.ErrorPageModule)
   }
 ];
 
