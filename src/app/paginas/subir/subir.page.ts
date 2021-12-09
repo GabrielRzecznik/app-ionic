@@ -51,6 +51,7 @@ export class SubirPage implements OnInit {
       this.formularioAutomovil.value.anio).subscribe(resp => {
         console.log(resp);
         this.api.recargarPagina.emit(true);
+        alert("Publicación creada con éxito!!")
         this.router.navigate(['/perfil']);
         //this.automovilesPublicados.push(resp);
       }),(error)=>{alert("No se pudo crear la publicación!")};  
