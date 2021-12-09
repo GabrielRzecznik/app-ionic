@@ -10,6 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
+defineCustomElements(window);
+
+//Camara
+//import { Camera } from '@ionic-native/camera'
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
